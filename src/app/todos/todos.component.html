@@ -1,0 +1,14 @@
+<h3>Todos list</h3>
+
+@if(!todoItemsSignal().length){
+<p>Loading...</p>
+}
+
+<ul class="todos">
+    @for (todo of todoItemsSignal(); track todo.id) {
+    <li class="todos__item">
+        <input id="todo-{{todo.id}}" type="checkbox" [value]="todo.completed">
+        <label for="todo-{{todo}}">{{todo.title}}</label>
+    </li>
+    }
+</ul>
